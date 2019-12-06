@@ -3,3 +3,13 @@
 ################################################################################
 
 /Library
+/Temp
+/RightMenuEvent.sln
+/Packages
+/obj/Debug
+/Logs
+/Assembly-CSharp.csproj
+/Assembly-CSharp-firstpass.csproj
+/Assembly-CSharp-Editor.csproj
+/Assembly-CSharp-Editor-firstpass.csproj
+/.vs/RightMenuEvent/v15
