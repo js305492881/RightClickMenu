@@ -4,12 +4,12 @@ using UnityEngine.UI;
 
 namespace xxl.xiesi
 {
-    public class ModelEventsSlider : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+    public class ModelEventsSlider : MonoBehaviour
     {
         public Slider m_slider;
         public Text m_text;
         public ModelValueType m_mvt;
-        private bool m_b真鼠标按下否鼠标抬起 = false;
+        //private bool m_b真鼠标按下否鼠标抬起 = false;
 
         // 加载脚本实例时调用 Awake
         private void Awake()
@@ -25,7 +25,8 @@ namespace xxl.xiesi
                     m_text.text = m_mvt.m_strValueName + m_slider.value.ToString("f" + m_mvt.m_n保留几位小数.ToString());
                 }
 
-                if (m_b真鼠标按下否鼠标抬起)
+                //if (m_b真鼠标按下否鼠标抬起)
+                if (Input.GetMouseButton(0))
                 {
                     m_mvt.m_fValue = m_slider.value;
                 }
@@ -56,20 +57,11 @@ namespace xxl.xiesi
             }
         }
 
-        public void OnPointerDown(PointerEventData eventData)
-        {
-            m_b真鼠标按下否鼠标抬起 = true;
-        }
-
-        public void OnPointerUp(PointerEventData eventData)
-        {
-            m_b真鼠标按下否鼠标抬起 = false;
-        }
-
         // 如果 MonoBehaviour 已启用，则在每一帧都调用 Update
         private void Update()
         {
-            if (!m_b真鼠标按下否鼠标抬起)
+            //if (!m_b真鼠标按下否鼠标抬起)
+            if (!Input.GetMouseButton(0))
             {
                 m_slider.value = m_mvt.m_fValue;
             }

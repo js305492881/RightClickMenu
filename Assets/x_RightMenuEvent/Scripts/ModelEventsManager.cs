@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace xxl.xiesi
 {
-    public class ModelEventsManager : MonoBehaviour
+    public class ModelEventsManager : MonoBehaviour, IPointerClickHandler
     {
         public static ModelEventsManager s_instance;
         public RectTransform m_rtfMenuRoot;
@@ -61,6 +62,11 @@ namespace xxl.xiesi
             {
                 _met.m_evnet.Invoke();
             });
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            Destroy(gameObject);
         }
     }
 }
